@@ -13,6 +13,16 @@ namespace monkey
                     return TokenType.FUNCTION;
                 case "let":
                     return TokenType.LET;
+                case "true":
+                    return TokenType.TRUE;
+                case "false":
+                    return TokenType.FALSE;
+                case "if":
+                    return TokenType.IF;
+                case "else":
+                    return TokenType.ELSE;
+                case "return":
+                    return TokenType.RETURN;
                 default:
                     return TokenType.IDENT;
 

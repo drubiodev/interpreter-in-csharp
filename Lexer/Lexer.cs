@@ -77,6 +77,24 @@ namespace monkey
                 case '+':
                     token = NewToken(TokenType.PLUS, this.Ch);
                     break;
+                case '-':
+                    token = NewToken(TokenType.MINUS, this.Ch);
+                    break;
+                case '!':
+                    token = NewToken(TokenType.BANG, this.Ch);
+                    break;
+                case '/':
+                    token = NewToken(TokenType.SLASH, this.Ch);
+                    break;
+                case '*':
+                    token = NewToken(TokenType.ASTERISK, this.Ch);
+                    break;
+                case '<':
+                    token = NewToken(TokenType.LT, this.Ch);
+                    break;
+                case '>':
+                    token = NewToken(TokenType.GT, this.Ch);
+                    break;
                 case '{':
                     token = NewToken(TokenType.LBRACE, this.Ch);
                     break;

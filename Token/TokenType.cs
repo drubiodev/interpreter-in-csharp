@@ -22,5 +22,10 @@ namespace monkey
         RBRACE, // }
         FUNCTION, // fn
         LET, // let
+        TRUE, // true
+        FALSE, // false
+        IF, // if
+        ELSE, // else
+        RETURN // return
     }
 }
