@@ -30,6 +30,17 @@ namespace monkey
             this.ReadPosition += 1;
         }
 
+        public Nullable<char> PeekChar()
+        {
+            if (this.ReadPosition >= this.Input.Length)
+            {
+                return null;
+            }
+            else
+            {
+                return this.Input[this.ReadPosition];
+            }
+        }
         public Token NewToken(TokenType tokenType, Nullable<char> ch)
         {
             return new Token { Type = tokenType, Literal = ch.ToString() };

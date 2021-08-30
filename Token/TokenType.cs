@@ -26,6 +26,8 @@ namespace monkey
         FALSE, // false
         IF, // if
         ELSE, // else
-        RETURN // return
+        RETURN, // return
+        EQ,// ==
+        NOT_EQ, // !=
     }
 }
