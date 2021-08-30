@@ -94,6 +94,11 @@ namespace monkey
                         token.Type = token.LookupIndent(token.Literal);
                         return token;
                     }
+                    else if (IsDigit())
+                    {
+                        token.Literal = ReadNumber();
+                        token.Type = TokenType.INT;
+                    }
                     else
                     {
                         token = NewToken(TokenType.ILLEGAL, this.Ch);
@@ -111,6 +116,27 @@ namespace monkey
             {
                 ReadChar();
             }
+        }
+
+        public bool IsDigit()
+        {
+            if (this.Ch.HasValue)
+            {
+                return Char.IsDigit(this.Ch.Value);
+            }
+
+            return false;
+        }
+
+        public string ReadNumber()
+        {
+            int position = this.Position;
+
+            while (IsDigit())
+            {
+                ReadChar();
+            }
+            return this.Input.Substring(position, this.Position);
         }
     }
 }
