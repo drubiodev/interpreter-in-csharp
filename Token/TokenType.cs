@@ -2,19 +2,25 @@ namespace monkey
 {
     public enum TokenType
     {
-        ILLEGAL,
-        EOF,
-        IDENT,
-        INT,
-        ASSIGN,
-        PLUS,
-        COMMA,
-        SEMICOLON,
-        LPAREN,
-        RPAREN,
-        LBRACE,
-        RBRACE,
-        FUNCTION,
-        LET,
+        ILLEGAL, // not valid
+        EOF, // end of line
+        IDENT, // indent
+        INT, // int 1,2,3,4
+        ASSIGN, // = 
+        PLUS, // +
+        MINUS, // -
+        BANG, // !
+        ASTERISK, // *
+        SLASH, // /
+        LT, // <
+        GT, // >
+        COMMA, // ,
+        SEMICOLON, // ;
+        LPAREN, // (
+        RPAREN, // )
+        LBRACE, // {
+        RBRACE, // }
+        FUNCTION, // fn
+        LET, // let
     }
 }
