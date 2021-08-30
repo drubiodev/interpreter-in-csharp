@@ -71,7 +71,16 @@ namespace monkey
             switch (this.Ch)
             {
                 case '=':
-                    token = NewToken(TokenType.ASSIGN, this.Ch);
+                    if (PeekChar() == '=')
+                    {
+                        var ch = this.Ch;
+                        ReadChar();
+                        token = new Token { Type = TokenType.EQ, Literal = $"{ch}{this.Ch}" };
+                    }
+                    else
+                    {
+                        token = NewToken(TokenType.ASSIGN, this.Ch);
+                    }
                     break;
                 case ';':
                     token = NewToken(TokenType.SEMICOLON, this.Ch);
@@ -92,7 +101,17 @@ namespace monkey
                     token = NewToken(TokenType.MINUS, this.Ch);
                     break;
                 case '!':
-                    token = NewToken(TokenType.BANG, this.Ch);
+                    if (PeekChar() == '=')
+                    {
+                        var ch = this.Ch;
+                        ReadChar();
+                        token = new Token { Type = TokenType.NOT_EQ, Literal = $"{ch}{this.Ch}" };
+                    }
+                    else
+                    {
+
+                        token = NewToken(TokenType.BANG, this.Ch);
+                    }
                     break;
                 case '/':
                     token = NewToken(TokenType.SLASH, this.Ch);
