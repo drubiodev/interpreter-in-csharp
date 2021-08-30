@@ -48,7 +48,7 @@ namespace monkey
             {
                 ReadChar();
             }
-            return this.Input.Substring(position, this.Position);
+            return this.Input.Substring(position, this.Position).Trim();
         }
 
         public Token NextToken()
@@ -136,7 +136,7 @@ namespace monkey
             {
                 ReadChar();
             }
-            return this.Input.Substring(position, this.Position);
+            return this.Input.Substring(position, this.Position).Trim();
         }
     }
 }
