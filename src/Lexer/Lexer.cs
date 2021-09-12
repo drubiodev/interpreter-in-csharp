@@ -59,7 +59,7 @@ namespace monkey
             {
                 ReadChar();
             }
-            return this.Input.Substring(position, this.Position - position).Trim();
+            return this.Input[position..this.Position].Trim();
         }
 
         public Token NextToken()
